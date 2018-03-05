@@ -1,0 +1,43 @@
+/*===========================
+//
+// 1.- INDEX
+//
+//
+//
+//
+//
+//
+//
+//
+//
+=================================*/
+
+.spacer {
+    margin-top: 40px;
+}
+
+
+/*==================================================================================================================
+// 1.- INDEX
+=====================================================================================================================*/
+
+.hero-unit {
+    background-color: #579138;
+    color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a pre:hover {
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(122, 122, 122, 1) 100%);
+}
+
+a pre {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
