@@ -87,10 +87,10 @@ $basename = basename($_SERVER['PHP_SELF']);
             Admin
         </li>
         <li class="nav-item">
-           <a class="nav-link" href="#"> Agregar Usuario </a>
+           <a class="nav-link" href="nuevo_usuario.php"> Agregar Usuario </a>
         </li>
         <li class="nav-item">
-           <a class="nav-link" href="#"> Listado Usuario </a>
+           <a class="nav-link" href="listado_usuario.php"> Listado Usuario </a>
         </li>
     </ul>
 
