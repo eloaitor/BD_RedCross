@@ -19,9 +19,9 @@ class refugiado {
         $this->db->getMysqli()->query("");
     }
 
-    public function fechaSalida(){
+    public function fechaSalida($id){
         //El update tiene k ser algo asi
-        //UPDATE reefugiado Set fechaSalida=GETDATE();
+        //UPDATE reefugiado SET fechaSalida=GETDATE() WHERE id = $id;
         $this->db->getMysqli()->query("");
     }
 
