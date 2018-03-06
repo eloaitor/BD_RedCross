@@ -9,7 +9,7 @@ class material {
     }
 
 /*
-*   MATERIALES
+*   MATERIALES  
 */
     public function listarMateriales(){
         try{
