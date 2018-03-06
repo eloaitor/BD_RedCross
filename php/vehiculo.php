@@ -29,4 +29,8 @@ class vehiculo {
     public function anadirVehiculo($matricula, $marca, $modelo, $observacion, $itv, $polizaSeguro){
         $this->db->getMysqli()->query("INSERT INTO `vehiculos`(`matricula`, `marca`, `modelo`, `observacion`. `itv`, `polizaSeguro`) VALUES ('$matricula', '$marca', '$modelo', '$observacion', '$itv', $polizaSeguro)"); 
     }
+
+    public function modificarVehiculo($id){
+        $this->db->getMysqli()->query("");
+    }
 }
