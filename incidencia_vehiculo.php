@@ -20,8 +20,6 @@
             <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
                 <h1>Nueva incidencia</h1>
 
-                
-
                 <div class="form-group">
                     <form action="#" method="POST">
                         <div class="row">

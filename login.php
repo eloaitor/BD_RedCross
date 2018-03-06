@@ -4,7 +4,7 @@
 <head>
     <?php include 'include/head.php' ?>
     
-    <title>Listado caducidades | Cruz Roja Gernika</title>
+    <title>Login| Cruz Roja Gernika</title>
 </head>
 
 <body>

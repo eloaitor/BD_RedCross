@@ -8,6 +8,9 @@ class material {
         $this->db = new BD();
     }
 
+/*
+*   MATERIALES
+*/
     public function listarMateriales(){
         try{
             $result = $this->db->getMysqli()->query("SELECT * FROM materiales");
@@ -36,6 +39,10 @@ class material {
     public function editarMaterial(){
     }
 
+
+/*
+*   CADUCIDADES
+*/
     public function listarCaducidades(){
         try{
             $result = $this->db->getMysqli()->query("SELECT M.id AS 'idMaterial', V.id AS 'idVehiculo', M.nombre, M.cantidad, M.caducidad, V.matricula, M.obsevaciones AS 'observacionesMaterial' FROM materiales M, vehiculos V WHERE M.id_vehiculo=V.id ");
