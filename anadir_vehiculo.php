@@ -103,12 +103,6 @@ include 'php/vehiculo.php';
 <?php
 
     $vehiculo = new vehiculo();
-    
-/*SACAR DATOS DE LOS VEHICULOS*/
-   /* $vehiculos = $vehiculo->listarVehiculos();
-    foreach ($vehiculos as $dato){
-        print_r ($dato->id . " - " .$dato->matricula . "<br>");
-    }*/
 
     if(isset($_POST['anadir_vehiculo'])){
         $matricula = $_POST['matricula'];

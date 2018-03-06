@@ -26,7 +26,7 @@ class vehiculo {
 
     }//ListarVehiculos
 
-    public function anadirVehiculo($matricula, $marca, $modelo, $observacion){
-        $this->db->getMysqli()->query("INSERT INTO `vehiculos`(`matricula`, `marca`, `modelo`, `observacion`) VALUES ('$matricula', '$marca', '$modelo', '$observacion')"); 
+    public function anadirVehiculo($matricula, $marca, $modelo, $observacion, $itv, $polizaSeguro){
+        $this->db->getMysqli()->query("INSERT INTO `vehiculos`(`matricula`, `marca`, `modelo`, `observacion`. `itv`, `polizaSeguro`) VALUES ('$matricula', '$marca', '$modelo', '$observacion', '$itv', $polizaSeguro)"); 
     }
 }
