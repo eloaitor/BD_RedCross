@@ -58,7 +58,7 @@
                             <div class="col-md-6 col-xs-12">
                                 <div class="form-group">
                                     <strong><label for="caducidad">Caducidad: </label></strong>
-                                    <input class="form-control" type="date" name="caducidad" id="caducidad" autofocus>
+                                    <input class="form-control" type="date" name="caducidad" id="caducidad" autofocus required>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@ if(isset($_POST['anadir_material'])){
     $nombre_material = $_POST['nombre_material'];
     $vehiculo = $_POST['vehiculo'];
     $cantidad = $_POST['cantidad'];
-    $caducidad = $_POST['cad</ucidad'];
+    $caducidad = $_POST['caducidad'];
     $observaciones = $_POST['observaciones'];
 
     $material->anadirMaterial($nombre_material, $vehiculo, $cantidad, $observaciones, $caducidad);

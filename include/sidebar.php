@@ -61,11 +61,12 @@ $basename = basename($_SERVER['PHP_SELF']);
             ?>" href="listado_refugiados.php">Listar refugiados</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php
+            <!--<a class="nav-link <?php
             if($basename == "nuevo_responsable.php" ){
                 echo("active");
             }
-            ?>" href="nuevo_responsable.php">Nuevo Responsable</a>
+            ?>" href="nuevo_responsable.php">Nuevo Responsable</a>-->
+            Nuevo responsable
         </li>
     </ul>
 
@@ -87,10 +88,19 @@ $basename = basename($_SERVER['PHP_SELF']);
             Admin
         </li>
         <li class="nav-item">
-           <a class="nav-link" href="nuevo_usuario.php"> Agregar Usuario </a>
+            <a class="nav-link <?php
+            if($basename == "nuevo_usuario.php" ){
+                echo("active");
+            }
+            ?>" href="nuevo_usuario.php">Agregar Usuario</a>
         </li>
+
         <li class="nav-item">
-           <a class="nav-link" href="listado_usuario.php"> Listado Usuario </a>
+            <a class="nav-link <?php
+            if($basename == "listado_usuarios.php" ){
+                echo("active");
+            }
+            ?>" href="listado_usuarios.php">Listado Usuario</a>
         </li>
     </ul>
 

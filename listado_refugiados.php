@@ -21,7 +21,7 @@
 
             <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
                 <h1>Listado refugiados</h1>
-   
+
                 <section>
                     <hr>
 
@@ -42,9 +42,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
+                            <?php
                                 $refugiados = $refugiado->listarRefugiados();
-                                if($refugiados != null){
+
                                     foreach ($refugiados as $dato){ ?>
                                         <tr>
                                             <td>
@@ -69,17 +69,23 @@
                                                 <?php echo($dato->alergias); ?>
                                             </td>
                                             <td>
-                                                <?php echo($dato->fechaEntrada); ?>
+                                                <?php echo($dato->fecha_entrada); ?>
                                             </td>
                                             <td>
-                                                <?php echo($dato->fechaSalida); ?>
+                                                <?php echo($dato->fecha_salida); ?>
                                             </td>
                                             <td>
                                                 <?php echo($dato->observaciones); ?>
                                             </td>
                                             <td>
                                                 <!-- Sacar solo este boton si no se le ha dado la salida al refugiado  -->
-                                                <button type="button" class="btn btn-sucess">Salida</button>
+                                                <?php
+                                                if($dato->fecha_salida == ""){
+                                                  ?>
+                                                  <button type="button" class="btn btn-success" name="salida">Salida</button>
+                                                <?php
+                                                }
+                                                ?>
                                                 <!-- Pasarle el id por el enlace y luego en la otra pagina cojerlo con el get-->
                                                 <a href="http://google.com" class="btn btn-info">Modificar</a>
                                                 <button type="button" class="btn btn-danger">Eliminar</button>
@@ -87,15 +93,7 @@
                                         </tr>
                                     <?php } ?>
 
-                                <?php }else{ ?>
-                                    <tr>
-                                        <td colspan="6">
-                                            <div class="alert alert-danger" role="alert">
-                                                <strong>Error! </strong> No se ha encontrado ningun dato para mostrar!
-                                            </div>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
+
                         </tbody>
                     </table>
                 </section>

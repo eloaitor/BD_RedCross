@@ -86,11 +86,11 @@
                     </div>
 
                     <div class="col-md-4 col-xs-12">
-                        <a href="anadir_responsable.php">
+                        <!--<a href="anadir_responsable.php">-->
                             <pre>
                                 <center><h3>Añadir Responsable</h3> <i class="fas fa-user-plus fa-5x" aria-hidden="true"></i></center>
                             </pre>
-                        </a>
+                        <!--</a>-->
                     </div>
 
                     <div class="col-md-4 col-xs-12">

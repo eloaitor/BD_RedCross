@@ -127,7 +127,7 @@
         $contrasena = $_POST['contrasena'];
         $observaciones = $_POST['observaciones'];
 
-        $usuario->anadirUsuario($nombre, $apellido1, $apellido2, $responsabilidad, $admin, $contrasena, $observaciones);
+        echo($nombre + $apellido1 + $apellido2 + $responsabilidad + $admin + $contrasena + $observaciones);
     }  
 ?>
 </body>

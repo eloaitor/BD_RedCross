@@ -116,6 +116,8 @@ include 'php/vehiculo.php';
         //ITV: Date
         //POLIZASEGURO: int
         $vehiculo->anadirVehiculo($matricula, $marca, $modelo, $observacion, $itv, $polizaSeguro);
+
+        echo($matricula + $marca + $modelo + $observacion + $itv + $polizaSeguro);
     }
 ?>
 

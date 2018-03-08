@@ -38,7 +38,7 @@
                             <div class="col-md-6 col-xs-12">
                                 <div class="form-group">
                                     <strong><label for="incidencia">Incidencia: </label></strong>
-                                    <input class="form-control" type="text" name="incidencia" id="incidencia" placeholder="Averia" maxlength="20" autofocus>
+                                    <input class="form-control" type="text" name="incidencia" id="incidencia" placeholder="Averia" maxlength="20" required autofocus>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                             <div class="col-md-12 col-xs-12">
                                 <div class="form-group">
                                     <strong><label for="observaciones">Observaciones: </label></strong>
-                                    <textarea rows="4" cols="50" class="form-control" name="observaciones" id="observaciones" placeholder="Descripcion de la incidencia"></textarea>
+                                    <textarea rows="4" cols="50" class="form-control" name="observaciones" id="observaciones" placeholder="Descripcion de la incidencia" autofocus></textarea>
                                 </div>
                              </div>
                         </div>
@@ -80,8 +80,11 @@
 
 <?php
     if(isset($_POST['registrar'])){
-        
-        
+        $idVehiculo = $_POST['vehiculo'];
+        $incidendia = $_POST['incidencia'];
+        $observaciones = $_POST['observaciones'];
+
+        $vehiculo->nuevaIncidencia($idVehiculo, $incidendia, $observaciones);
     }  
 ?>
 </body>

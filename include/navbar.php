@@ -3,7 +3,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand" href="../index.php">Cruz Roja Gernika</a>
+    <a class="navbar-brand" href="index.php">Cruz Roja Gernika</a>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">

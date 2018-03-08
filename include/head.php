@@ -21,4 +21,8 @@
 <!--====================================================
 SOLO CUANDO ES EL LOGIN
 ========================================================-->
-<!--<link href="css/login.css" rel="stylesheet">-->
+<?php 
+$basename = basename($_SERVER['PHP_SELF']);
+if($basename == "login.php" ){ 
+        echo("<link href='css/login.css' rel='stylesheet'>");
+}?>

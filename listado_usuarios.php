@@ -41,7 +41,6 @@
                         <tbody>
                             <?php 
                                 $usuarios = $usuario->listarUsuarios();
-                                if($usuarios != null){
                                     foreach ($usuarios as $dato){ ?>
                                         <tr>
                                             <td>
@@ -72,16 +71,6 @@
                                             </td>
                                         </tr>
                                     <?php } ?>
-
-                                <?php }else{ ?>
-                                    <tr>
-                                        <td colspan="6">
-                                            <div class="alert alert-danger" role="alert">
-                                                <strong>Error! </strong> No se ha encontrado ningun dato para mostrar!
-                                            </div>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
                         </tbody>
                     </table>
                 </section>
