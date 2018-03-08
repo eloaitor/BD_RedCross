@@ -3,13 +3,6 @@
 // 1.- INDEX
 //
 //
-//
-//
-//
-//
-//
-//
-//
 =================================*/
 
 .spacer {
@@ -22,10 +15,20 @@
 =====================================================================================================================*/
 
 .hero-unit {
-    background-color: #579138;
-    color: #FFF;
+    /*background-color: #579138;*/
+    /* Old browsers */
+    background: rgb(135, 224, 253);
+    /* FF3.6-15 */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(135, 224, 253, 1) 0%, rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(135, 224, 253, 1) 0%, rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: radial-gradient(ellipse at center, rgba(135, 224, 253, 1) 0%, rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+    /* IE6-9 fallback on horizontal gradient */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0', GradientType=1);
+    color: #F2F2F2;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 a {
@@ -33,11 +36,29 @@ a {
 }
 
 a pre:hover {
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(122, 122, 122, 1) 100%);
+    /*background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(122, 122, 122, 1) 100%);*/
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+1,009999+100&1+0,0.63+100 */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 1%, rgba(0, 153, 153, 0.63) 100%);
+    /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 1%, rgba(0, 153, 153, 0.63) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 1%, rgba(0, 153, 153, 0.63) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a1009999', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
 }
 
 a pre {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+1,68b0ab+100&1+0,0.63+100 */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 1%, rgba(104, 176, 171, 0.63) 100%);
+    /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 1%, rgba(104, 176, 171, 0.63) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 1%, rgba(104, 176, 171, 0.63) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a168b0ab', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
 }

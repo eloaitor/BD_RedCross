@@ -18,9 +18,9 @@
             <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
                 <h1>Gernikako Gurutze Gorria - Cruz Roja Gernika</h1>
 
-                <section class="row text-justify ">
+                <section class="row text-justify col-md-12 col-xs-12">
                     <div class="hero-unit">
-                        <h3>Bienvenido a la APP de Cruz Roja Gernika</h3>
+                        <strong><h3>Bienvenido a la APP de Cruz Roja Gernika</h3></strong>
                         <p>
                             Con esta sencilla herramienta, podrá gestionar las caducidades de diferentes vehiculos y registrar todo los refugiados de
                             su Albergue.
@@ -77,7 +77,7 @@
 
                 <hr>
                 <div class="row">
-                    <div class="col-md-4 col-xs-12">
+                    <div class="col-md-6 col-xs-12">
                         <a href="nuevo_refugiado.php">
                             <pre>
                                 <center><h3>Añadir Refugiado</h3> <i class="fas fa-user-plus fa-5x"></i></center>
@@ -85,15 +85,7 @@
                         </a>
                     </div>
 
-                    <div class="col-md-4 col-xs-12">
-                        <!--<a href="anadir_responsable.php">-->
-                            <pre>
-                                <center><h3>Añadir Responsable</h3> <i class="fas fa-user-plus fa-5x" aria-hidden="true"></i></center>
-                            </pre>
-                        <!--</a>-->
-                    </div>
-
-                    <div class="col-md-4 col-xs-12">
+                    <div class="col-md-6 col-xs-12">
                         <a href="listado_refugiados.php">
                             <pre>
                                 <center><h3>Listado</h3><i class="fas fa-list fa-5x" aria-hidden="true"></i></center>

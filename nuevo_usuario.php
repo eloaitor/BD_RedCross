@@ -127,6 +127,8 @@
         $contrasena = $_POST['contrasena'];
         $observaciones = $_POST['observaciones'];
 
+        
+
         echo($nombre + $apellido1 + $apellido2 + $responsabilidad + $admin + $contrasena + $observaciones);
     }  
 ?>
