@@ -8,13 +8,12 @@ class BD {
     private $mysqli;
 
     public function __construct() {
+        $this->mysqli = new mysqli($this->host, $this->user, $this->password, $this->database);
         /*if ($this->mysqli->connect_error) {
-            die("Error al conectar a la Base de Datos");
+            header('Location: /Login/index.php');
             //die("Connection failed: " . $this->mysqli->connect_error);
         }*/
-        $this->mysqli = new mysqli($this->host, $this->user, $this->password, $this->database);
-
-
+        
     }
 
     public function getMysqli(){
@@ -26,20 +25,4 @@ class BD {
     }
 }
 
-/*$servername = "localhost";
-$username = "username";
-$password = "password";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-
-if ($this->mysqli) {
-    die("Connection failed: " . $conn->connect_error);
-}*/
 ?>
