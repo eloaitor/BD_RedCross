@@ -1,17 +1,17 @@
-<?php include "php/usuario.php"; ?>
-<?php $usuario = new usuario(); ?>
-
+<?php include "php/vehiculo.php"; ?>
+<?php $vehiculo = new vehiculo(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <?php include 'include/head.php' ?>
 
-    <title>Listado usuarios | Cruz Roja Gernika</title>
+    <title>Listado incidencias | Cruz Roja Gernika</title>
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+
     <?php include 'include/navbar.php' ?>
 
     <div class="container-fluid">
@@ -20,67 +20,58 @@
             <?php include 'include/sidebar.php' ?>
 
             <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-                <h1>Listado usuarios</h1>
-   
+                <h1>Listado incidencias</h1>
+
                 <section>
                     <hr>
 
-                    <table class="table table-hover" id="tabla_usuarios"  class="display">
+                    <table class="table table-hover" id="tabla_incidencias"  class="display">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apellido1</th>
-                                <th>Apellido2</th>
-                                <th>Responsabilidad</th>
-                                <th>Admin</th>
+                                <th>Vehiculo</th>
+                                <th>Incidencia</th>
                                 <th>Observaciones</th>
                                 <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
-                                $usuarios = $usuario->listarUsuarios();
-
-                                if( is_array( $usuarios ) && count( $usuarios ) > 0 ) {
-                                    foreach ($usuarios as $dato){ ?>
+                            <?php
+                                $incidencias = $vehiculo->listarIncidencias();
+                                if( is_array( $incidencias ) && count( $incidencias ) > 0 ) {
+                                    foreach ($incidencias as $dato){ ?>
                                         <tr>
                                             <td>
-                                                <?php echo($dato->id); ?>
+                                                <?php echo($dato->IdIncidencia); ?>
                                             </td>
                                             <td>
-                                                <?php echo($dato->nombre); ?>
+                                                <?php echo($dato->matricula); ?>
                                             </td>
                                             <td>
-                                                <?php echo($dato->apellido1); ?>
-                                            </td>
-                                            <td>
-                                                <?php echo($dato->apellido2); ?>
-                                            </td>
-                                            <td>
-                                                <?php echo($dato->responsabilidad); ?>
-                                            </td>
-                                            <td>
-                                                <?php echo($dato->admin); ?>
+                                                <?php echo($dato->incidencia); ?>
                                             </td>
                                             <td>
                                                 <?php echo($dato->observaciones); ?>
                                             </td>
                                             <td>
                                                 <!-- Pasarle el id por el enlace y luego en la otra pagina cojerlo con el get-->
-                                                <a href="http://google.com" class="btn btn-info">Modificar</a>
-                                                <button type="button" class="btn btn-danger">Eliminar</button>
+                                                <a href="incidencia_vehiculo.php?id=<?php echo($dato->IdIncidencia); ?>" class="btn btn-info">Modificar</a>
+                                                <form action="#" method="POST">
+                                                    <a name="eliminar" href="#?id=<?php echo($dato->IdIncidencia); ?>" class="btn btn-info">eliminar</a>
+                                                </form>
+                                                
+                                                <button type="button" name="eliminar" class="btn btn-danger">Eliminar</button>
                                             </td>
                                         </tr>
                                     <?php } ?>
-                                <?php }else{ ?>
-                                    <tr>
-                                        <td colspan="8">
-                                            <div class="alert alert-danger">
-                                                <strong>Error!</strong> No se han encontrado incidencias. Si cree que se trata de un error contacte con el administrador. <strong>Aitor Elorriaga</strong>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <?php } else { ?>
+                                        <tr>
+                                            <td colspan="5">
+                                                <div class="alert alert-danger">
+                                                    <strong>Error!</strong> No se han encontrado incidencias. Si cree que se trata de un error contacte con el administrador. <strong>Aitor Elorriaga</strong>
+                                                </div>
+                                            </td>
+                                        </tr>
                                 <?php } ?>
                         </tbody>
                     </table>
@@ -106,9 +97,17 @@
 
     <script>
         $(document).ready(function() {
-            var table = $('#tabla_usuarios').DataTable();
+            var table = $('#tabla_incidencias').DataTable();
         });
     </script>
+
+    <?php
+    if(isset($_POST['eliminar'])){
+        $id = $_GET['id'];
+        echo($id);
+        $vehiculo->eliminarIncidencia($id);
+    }
+    ?>
 
 </body>
 

@@ -8,7 +8,14 @@ $basename = basename($_SERVER['PHP_SELF']);
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>-->
         <li class="navbar-brand">
-            Caducidades
+            Vehiculo
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <?php
+            if($basename == "anadir_vehiculo.php" ){
+                echo("active");
+            }
+            ?>" href="anadir_vehiculo.php">Añadir vehiculo</a>
         </li>
         <li class="nav-item">
             <a class="nav-link <?php
@@ -19,17 +26,25 @@ $basename = basename($_SERVER['PHP_SELF']);
         </li>
         <li class="nav-item">
             <a class="nav-link <?php
+            if($basename == "listado_incidencia.php" ){
+                echo("active");
+            }
+            ?>" href="listado_incidencia.php">Listado incidencias</a>
+        </li>
+    </ul>
+    
+    <hr/>
+
+    <ul class="nav nav-pills flex-column">
+        <li class="navbar-brand">
+            Caducidades
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <?php
             if($basename == "anadir_material.php" ){
                 echo("active");
             }
             ?>" href="anadir_material.php">Añadir material</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link <?php
-            if($basename == "anadir_vehiculo.php" ){
-                echo("active");
-            }
-            ?>" href="anadir_vehiculo.php">Añadir vehiculo</a>
         </li>
         <li class="nav-item">
             <a class="nav-link <?php
@@ -59,14 +74,6 @@ $basename = basename($_SERVER['PHP_SELF']);
                 echo("active");
             }
             ?>" href="listado_refugiados.php">Listar refugiados</a>
-        </li>
-        <li class="nav-item">
-            <!--<a class="nav-link <?php
-            if($basename == "nuevo_responsable.php" ){
-                echo("active");
-            }
-            ?>" href="nuevo_responsable.php">Nuevo Responsable</a>-->
-            Nuevo responsable
         </li>
     </ul>
 

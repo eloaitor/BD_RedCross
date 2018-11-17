@@ -44,7 +44,8 @@
                         <tbody>
                             <?php
                                 $refugiados = $refugiado->listarRefugiados();
-
+                                if( is_array( $refugiados ) && count( $refugiados ) > 0 ) {
+                                    
                                     foreach ($refugiados as $dato){ ?>
                                         <tr>
                                             <td>
@@ -82,17 +83,26 @@
                                                 <?php
                                                 if($dato->fecha_salida == ""){
                                                   ?>
-                                                  <button type="button" class="btn btn-success" name="salida">Salida</button>
+                                                  <button type="button" class="btn btn-success" name="salida" type="submit">Salida</button>
                                                 <?php
                                                 }
                                                 ?>
                                                 <!-- Pasarle el id por el enlace y luego en la otra pagina cojerlo con el get-->
-                                                <a href="http://google.com" class="btn btn-info">Modificar</a>
-                                                <button type="button" class="btn btn-danger">Eliminar</button>
+                                                <a href="modificar_refugiado.php?id=<?php echo($dato->id); ?>" class="btn btn-danger">Detalles</a>
+                                                <a href="modificar_refugiado.php?id=<?php echo($dato->id); ?>" class="btn btn-danger">Modificar</a>
                                             </td>
                                         </tr>
                                     <?php } ?>
 
+                                <?php }else{?>
+                                    <tr>
+                                        <td colspan="11">
+                                            <div class="alert alert-danger">
+                                                <strong>Error!</strong> No se han encontrado incidencias. Si cree que se trata de un error contacte con el administrador. <strong>Aitor Elorriaga</strong>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php } ?>             
 
                         </tbody>
                     </table>
@@ -121,6 +131,13 @@
             var table = $('#tabla_refugiados').DataTable();
         });
     </script>
+
+     <?php
+    if(isset($_POST['salida'])){?>
+        <script>alert("hola mundo");</script>
+    <?php } ?>
+    
+?>
 
 </body>
 

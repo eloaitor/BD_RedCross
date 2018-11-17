@@ -13,13 +13,18 @@ class refugiado {
         try{
             $result = $this->db->getMysqli()->query("SELECT `id`, `nombre`, `apellido1`, `apellido2`, `dni`, `medicamentos`, `alergias`, `fecha_entrada`, `fecha_salida`, `observaciones`, `fechaNacimiento`, `telefonoContacto`, `vistar` FROM `refugiado` WHERE `vistar` = 1");
             $numRows = $result->num_rows;
-
-            $arrayVehiculos = array();
-            for ($i = 0; $i<$result->num_rows; $i++){
-                $fila = $result->fetch_object();
-                $filas[] = $fila;
+            
+            if($numRows > 0){
+                $arrayVehiculos = array();
+                for ($i = 0; $i<$result->num_rows; $i++){
+                    $fila = $result->fetch_object();
+                    $filas[] = $fila;
+                }
+                return $filas;
+            }else{
+                return null;
             }
-            return $filas;
+            
 
           }catch (Exception $e){
             throw $e;
@@ -27,7 +32,9 @@ class refugiado {
     }
 
     public function seleccionarUnRefugiado($id){
-      $this->db->getMysqli()->query("SELECT `id`, `nombre`, `apellido1`, `apellido2`, `dni`, `medicamentos`, `alergias`, `fecha_entrada`, `fecha_salida`, `observaciones`, `fechaNacimiento`, `telefonoContacto` FROM `refugiado` WHERE id = $id");
+      $result = $this->db->getMysqli()->query("SELECT `id`, `nombre`, `apellido1`, `apellido2`, `dni`, `medicamentos`, `alergias`, `fecha_entrada`, `fecha_salida`, `observaciones`, `fechaNacimiento`, `telefonoContacto` FROM `refugiado` WHERE id = $id");
+      $fila = $result->fetch_object();
+      return $fila;
     }
 
     public function anadirRefugiado($nombre, $apellido1, $apellido2, $dni, $medicamentos, $alergias, $fechaNacimiento, $telefonoContacto, $observaciones){
@@ -48,8 +55,8 @@ class refugiado {
         $this->db->getMysqli()->query("UPDATE `refugiado` SET `vistar`= 0 WHERE id = $id");
     }
 
-    public function modificarRefugiado(/*TODO LOS CAMPOS*/){
+    public function modificarRefugiado($id, $nombre, $apellido1, $apellido2, $dni, $medicamentos, $alergias, $fechaNacimiento, $telefonoContacto, $observaciones){
         //UPDATE
-         $this->db->getMysqli()->query("");
+         $this->db->getMysqli()->query("UPDATE `refugiado` SET `nombre`='$nombre',`apellido1`='$apellido1',`apellido2`='$apellido2',`dni`='$dni',`medicamentos`='$medicamentos',`alergias`='$alergias',`observaciones`='$observaciones',`fechaNacimiento`='$fechaNacimiento',`telefonoContacto`='$telefonoContacto' WHERE `id` = $id");
     }
 }

@@ -48,12 +48,18 @@ class material {
             $result = $this->db->getMysqli()->query("SELECT M.id AS 'idMaterial', V.id AS 'idVehiculo', M.nombre, M.cantidad, M.caducidad, V.matricula, M.obsevaciones AS 'observacionesMaterial' FROM materiales M, vehiculos V WHERE M.id_vehiculo=V.id ");
             $numRows = $result->num_rows;
 
+            if($numRows < 0){
                 $arrayCaducidades = array();
                 for ($i = 0; $i<$result->num_rows; $i++){
                     $fila = $result->fetch_object();
                     $filas[] = $fila;
                 }
+                
                 return $filas;
+
+            }else{
+                return null;
+            }
             
         }catch (Exception $e){
            throw e;

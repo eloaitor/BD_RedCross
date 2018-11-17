@@ -20,7 +20,6 @@ include 'php/vehiculo.php';
 
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
             <h1>Anadir un nuevo vehiculo</h1>
-            ANADIR ITV,POLIZA SEGURO,
 
             <div class="form-group">
                 <form action="#" method="POST">

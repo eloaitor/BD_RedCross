@@ -14,15 +14,21 @@ class usuario {
     public function listarUsuarios(){
         try{
             $result = $this->db->getMysqli()->query("SELECT id, nombre, apellido1, apellido2, responsabilidad, admin, observaciones FROM usuario");
-
             $numRows = $result->num_rows;
-
-            $arrrayUsuarios = array();
-            for ($i = 0; $i<$result->num_rows; $i++){
-                $fila = $result->fetch_object();
-                $filas[] = $fila;
+            
+            if($numRows > 0){
+                $arrrayUsuarios = array();
+                for ($i = 0; $i<$result->num_rows; $i++){
+                    $fila = $result->fetch_object();
+                    $filas[] = $fila;
+                }
+            
+                return $filas;
+                
+            }else{
+                return null;
             }
-            return $filas;
+            
         }catch(Exception $e){
             throw e;
         }

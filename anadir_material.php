@@ -39,9 +39,15 @@
                                     <strong><label for="vehiculo">Vehiculo: </label></strong>
                                     <select class="form-control" name="vehiculo" id="vehiculo" autofocus required>
                                         <?php $vehiculos = $vehiculo->listarVehiculos(); ?>
-                                        <?php foreach ($vehiculos as $dato){ ?>
-                                            <option value="<?php echo($dato->id);?>"><?php echo($dato->matricula); ?></option>
+
+                                        <?php if( is_array( $vehiculos ) && count( $vehiculos ) > 0 ) { ?>
+                                            <?php foreach ($vehiculos as $dato){ ?>
+                                                <option value="<?php echo($dato->id);?>"><?php echo($dato->matricula); ?></option>
+                                            <?php } ?>
+                                        <?php }else{?>
+                                            <option>No hay vehiculos ingresados</option>
                                         <?php } ?>
+                                        
                                     </select>
                                 </div>
                             </div>
@@ -108,7 +114,16 @@ if(isset($_POST['anadir_material'])){
     $caducidad = $_POST['caducidad'];
     $observaciones = $_POST['observaciones'];
 
-    $material->anadirMaterial($nombre_material, $vehiculo, $cantidad, $observaciones, $caducidad);
+   $ssql = $material->anadirMaterial($nombre_material, $vehiculo, $cantidad, $observaciones, $caducidad);
+   echo(mysql_affected_rows());
+    if (mysql_query($ssql)){
+        //si se consiguio insertar la empresa
+        echo "todo correcto";
+    }else{
+        //no se ejecuto la sentencia correctamente
+        echo "hubo un error";
+        echo mysql_error();
+    } 
 }
 ?>
 

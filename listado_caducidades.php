@@ -41,7 +41,8 @@
                         <tbody>
                             <?php 
                                 $caducidades = $material->listarCaducidades();
-                                if($caducidades != null){
+                                if( is_array( $caducidades ) && count( $caducidades ) > 0 ) {
+                                    
                                     foreach ($caducidades as $dato){ ?>
                                         <tr>
                                             <td>
@@ -71,7 +72,7 @@
                                     <tr>
                                         <td colspan="6">
                                             <div class="alert alert-danger" role="alert">
-                                                <strong>Error! </strong> No se ha encontrado ningun dato para mostrar!
+                                            <strong>Error!</strong> No se han encontrado incidencias. Si cree que se trata de un error contacte con el administrador. <strong>Aitor Elorriaga</strong>
                                             </div>
                                         </td>
                                     </tr>
